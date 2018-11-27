@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
+import { MenuComponent } from '../menu/menu.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -8,7 +10,11 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ 
+        HeaderComponent,
+        MenuComponent
+      ],
+      imports: [ RouterTestingModule ]
     })
     .compileComponents();
   }));
@@ -21,5 +27,10 @@ describe('HeaderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`should have as title 'angular-devoteam'`, () => {
+    const app = fixture.debugElement.componentInstance;
+    expect(app.title).toEqual('angular-devoteam');
   });
 });
