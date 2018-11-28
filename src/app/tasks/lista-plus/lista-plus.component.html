@@ -1,0 +1,11 @@
+<dvt-new-task (onNewTask)="addTask($event)"></dvt-new-task>
+
+<div class="mt-3" [class.hide]="!aTareas.length">
+  <h3>Lista de tareas</h3>
+
+  <ul class="list-group">
+    <li class="list-group-item row" *ngFor="let item of aTareas; let i = index">
+      <dvt-task [oTarea]="item" [index]="i" (onDeleteTask)="deleteTask($event)"></dvt-task>
+    </li>
+  </ul>
+</div>
