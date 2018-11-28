@@ -4,6 +4,8 @@ import { HomeComponent } from './home.component';
 import { SaludoLocalComponent } from './saludo-local/saludo-local.component';
 import { SaludoComponent } from './saludo/saludo.component';
 import { FormsModule } from '@angular/forms';
+import { PipesComponent } from './pipes/pipes.component';
+import { TruncatePipe } from './truncate.pipe';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -11,9 +13,12 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent,
+      declarations: [
+        HomeComponent,
         SaludoComponent,
-        SaludoLocalComponent
+        SaludoLocalComponent,
+        PipesComponent,
+        TruncatePipe
       ],
       imports: [ FormsModule ]
     })
