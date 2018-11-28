@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { Task } from 'src/app/models/task.model';
 
 @Component({
@@ -32,9 +32,5 @@ export class ListaSimpleComponent implements OnInit, OnDestroy {
 
   deleteTask(i) {
     this.aTareas.splice(i, 1)
-  }
-
-  private setStore() {
-
   }
 }

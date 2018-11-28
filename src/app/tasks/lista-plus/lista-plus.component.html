@@ -1,6 +1,7 @@
 <dvt-new-task (onNewTask)="addTask($event)"></dvt-new-task>
 
-<div class="mt-3" [class.hide]="!aTareas.length">
+<!-- <div class="mt-3" [class.hide]="!aTareas.length"> -->
+<div class="mt-3" [ngClass]="{ hide: !aTareas.length }">
   <h3>Lista de tareas</h3>
 
   <ul class="list-group">
