@@ -11,6 +11,8 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { BlogModule } from './blog/blog.module';
 import { CursosModule } from './cursos/cursos.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { LibrosModule } from './libros/libros.module';
 // import { CursosComponent } from './cursos/cursos.component';
 
 // the second parameter 'es' is optional
@@ -26,12 +28,14 @@ registerLocaleData(localeEs, 'es');
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    NgbModule,
     LayoutModule,
     HomeModule,
     TasksModule,
     AboutModule,
     BlogModule,
-    CursosModule
+    CursosModule,
+    LibrosModule
   ],
   exports: [],
   providers: [],

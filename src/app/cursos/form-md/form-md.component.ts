@@ -31,11 +31,11 @@ export class FormMdComponent implements OnInit {
   }
 
   get nombre() { return this.form.get('nombre'); }
-  get apellidos() { return this.form.get('nombre'); }
-  get email() { return this.form.get('nombre'); }
-  get isOk() { return this.form.get('nombre'); }
-  get turno() { return this.form.get('nombre'); }
-  get curso() { return this.form.get('nombre'); }
+  get apellidos() { return this.form.get('apellidos'); }
+  get email() { return this.form.get('email'); }
+  get isOk() { return this.form.get('isOk'); }
+  get turno() { return this.form.get('turno'); }
+  get curso() { return this.form.get('curso'); }
 
   enviar(event) {
     event.preventDefault();
