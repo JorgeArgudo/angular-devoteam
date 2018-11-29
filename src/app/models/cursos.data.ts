@@ -7,7 +7,7 @@ export const CURSOS: Array<Curso> = [
 ];
 
 export const TURNOS: Array<Turno> = [
-    { id: '01', nombre: 'mañana', horario: '9:00 - 13:00' },
+    { id: '01', nombre: 'mañana', horario: '10:00 - 13:00' },
     { id: '02', nombre: 'tarde', horario: '15:00 - 19:00' },
-    { id: '03', nombre: 'noche', horario: '9:00 - 13:00' }
+    { id: '03', nombre: 'noche', horario: '20:00 - 23:00' }
 ];

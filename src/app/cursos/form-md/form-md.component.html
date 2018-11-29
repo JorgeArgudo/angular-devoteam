@@ -1,3 +1,77 @@
-<p>
-  form-md works!
-</p>
+<h4>Formulario ModelDriven</h4>
+<form name="form-md" [formGroup]="form" (submit)="enviar($event)">
+  <fieldset>
+    <legend>Datos de usuario</legend>
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" name="nombre" id="nombre" formControlName="nombre">
+    </div>
+    <div class="errors" *ngIf="nombre.invalid && nombre.touched">
+      <p *ngIf="!!nombre.errors.required">*Nombre requerido</p>
+      <p *ngIf="!!nombre.errors.minlength">*Debe tener almenos dos caracteres</p>
+    </div>
+
+    <div class="form-group">
+      <label for="apellidos">Apellidos</label>
+      <input type="text" class="form-control" name="apellidos" id="apellidos" formControlName="apellidos">
+    </div>
+    <div class="errors" *ngIf="apellidos.invalid && apellidos.touched">
+      <p>*Curso requerido</p>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo</label>
+      <input type="email" class="form-control" name="email" id="email" formControlName="email">
+    </div>
+    <div class="errors" *ngIf="email.invalid && email.touched">
+      <p *ngIf="!!email.errors.required">*Correo requerido</p>
+      <p *ngIf="!!email.errors.minlength">*Escriba un correo válido</p>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Datos del curso</legend>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="isOk" id="isOk" formControlName="isOk">
+        Estoy de acuerdo con las normas
+      </label>
+    </div>
+    <div class="errors" *ngIf="isOk.invalid && isOk.touched">
+      <p>*Curso requerido</p>
+    </div>
+
+    <div>
+      <legend>Turno</legend>
+      <div class="form-check" *ngFor="let item of aTurnos">
+        <label class="form-check-label" [title]="item.horario">
+          <input type="radio" class="form-check-input" name="turno" id="'turno-'+item.id" [value]="item"
+            formControlName="turno">
+          {{ item.nombre | titlecase }}
+        </label>
+      </div>
+      <div class="errors" *ngIf="turno.invalid && turno.touched">
+        <p>*Curso requerido</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <legend>Curso</legend>
+      <label for="curso">Selecciona el curso</label>
+      <select class="form-control" name="curso" id="curso" formControlName="curso">
+        <option *ngFor="let item of aCursos" [ngValue]="item" [title]="item.descripcion">{{item.nombre}}</option>
+      </select>
+    </div>
+    <div class="errors" *ngIf="curso.invalid && curso.touched">
+      <p>*Curso requerido</p>
+    </div>
+  </fieldset>
+
+  <button type="submit" class="btn btn-danger" [disabled]="form.invalid">Enviar</button>
+
+  <button type="reset" class="btn btn-danger" [disabled]="form.pristine">Borrar</button>
+</form>
+
+<div class="mt-2">
+  <p>{{form.value | json}}</p>
+</div>
