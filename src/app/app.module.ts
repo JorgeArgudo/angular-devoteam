@@ -10,13 +10,16 @@ import { AboutModule } from './about/about.module';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { BlogModule } from './blog/blog.module';
+import { CursosModule } from './cursos/cursos.module';
+// import { CursosComponent } from './cursos/cursos.component';
 
 // the second parameter 'es' is optional
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // CursosComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ registerLocaleData(localeEs, 'es');
     HomeModule,
     TasksModule,
     AboutModule,
-    BlogModule
+    BlogModule,
+    CursosModule
   ],
   exports: [],
   providers: [],
