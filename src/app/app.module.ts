@@ -13,6 +13,7 @@ import { BlogModule } from './blog/blog.module';
 import { CursosModule } from './cursos/cursos.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LibrosModule } from './libros/libros.module';
+import { HttpClientModule } from '@angular/common/http';
 // import { CursosComponent } from './cursos/cursos.component';
 
 // the second parameter 'es' is optional
@@ -27,6 +28,7 @@ registerLocaleData(localeEs, 'es');
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
     LayoutModule,
